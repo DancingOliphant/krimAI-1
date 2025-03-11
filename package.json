@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node public/create-svg-files.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

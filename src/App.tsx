@@ -1,9 +1,129 @@
 import React from 'react';
 import Section from './components/Section';
-// Fix the import path - no "styles" folder specified in import
-import '../src/styles/backgrounds.css';
+
+// Include the styles directly in the component
+const styles = `
+/* Section Backgrounds */
+.section-wave-purple {
+  background: linear-gradient(180deg, #0f0320 0%, #1a0035 100%);
+  position: relative;
+  overflow: hidden;
+}
+.section-wave-purple::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/wave-purple.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.section-wave-blue {
+  background: linear-gradient(180deg, #001428 0%, #002a51 100%);
+  position: relative;
+  overflow: hidden;
+}
+.section-wave-blue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/wave-blue.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.section-spectrum {
+  background: #080808;
+  position: relative;
+  overflow: hidden;
+}
+.section-spectrum::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/spectrum.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.section-circle {
+  background: linear-gradient(180deg, #001a1a 0%, #003333 100%);
+  position: relative;
+  overflow: hidden;
+}
+.section-circle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/circle-pulse.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.section-particles {
+  background: linear-gradient(180deg, #0a0836 0%, #1d1155 100%);
+  position: relative;
+  overflow: hidden;
+}
+.section-particles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/particles.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+/* Make sure section content appears above background */
+.section-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix scrolling issue */
+html, body {
+  overflow-y: auto !important;
+  height: auto !important;
+}
+`;
 
 function App() {
+  // Add the styles to the document
+  React.useEffect(() => {
+    const styleEl = document.createElement('style');
+    styleEl.textContent = styles;
+    document.head.appendChild(styleEl);
+    return () => {
+      document.head.removeChild(styleEl);
+    };
+  }, []);
+
   return (
     <div className="app">
       <Section backgroundType="wave-purple" id="home">
