@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from './components/Section';
-// Import the CSS file from the correct location
-import './styles/backgrounds.css';
+// Fix the import path - no "styles" folder specified in import
+import '../src/styles/backgrounds.css';
 
 function App() {
   return (

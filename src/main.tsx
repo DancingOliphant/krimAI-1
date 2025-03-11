@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+// Import the backgrounds CSS directly here too
+import './styles/backgrounds.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
