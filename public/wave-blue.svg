@@ -1,0 +1,8 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,300 Q300,200 600,300 T1200,300" fill="none" stroke="#00bfff" stroke-width="2" opacity="0.3">
+    <animate attributeName="d" dur="30s" repeatCount="indefinite" values="M0,300 Q300,200 600,300 T1200,300;M0,300 Q300,400 600,300 T1200,300;M0,300 Q300,200 600,300 T1200,300" />
+  </path>
+  <path d="M0,300 Q300,400 600,300 T1200,300" fill="none" stroke="#1e90ff" stroke-width="3" opacity="0.2" stroke-dasharray="5,5">
+    <animate attributeName="d" dur="20s" repeatCount="indefinite" values="M0,300 Q300,400 600,300 T1200,300;M0,300 Q300,200 600,300 T1200,300;M0,300 Q300,400 600,300 T1200,300" />
+  </path>
+</svg>

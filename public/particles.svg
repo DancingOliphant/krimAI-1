@@ -1,0 +1,52 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <circle cx="100" cy="300" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="15s" values="300;280;320;300" repeatCount="indefinite" />
+    </circle>
+    <circle cx="120" cy="310" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="12s" values="310;290;330;310" repeatCount="indefinite" />
+    </circle>
+    <circle cx="140" cy="290" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="14s" values="290;320;280;290" repeatCount="indefinite" />
+    </circle>
+    <circle cx="160" cy="305" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="13s" values="305;275;315;305" repeatCount="indefinite" />
+    </circle>
+    <circle cx="180" cy="295" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="11s" values="295;325;285;295" repeatCount="indefinite" />
+    </circle>
+    <circle cx="200" cy="300" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="10s" values="300;270;310;300" repeatCount="indefinite" />
+    </circle>
+    <circle cx="220" cy="310" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="9s" values="310;280;320;310" repeatCount="indefinite" />
+    </circle>
+    <circle cx="240" cy="290" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="16s" values="290;310;280;290" repeatCount="indefinite" />
+    </circle>
+    <circle cx="260" cy="300" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="17s" values="300;280;320;300" repeatCount="indefinite" />
+    </circle>
+    <circle cx="280" cy="305" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="15s" values="305;325;295;305" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="295" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="14s" values="295;275;305;295" repeatCount="indefinite" />
+    </circle>
+    <circle cx="320" cy="300" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="13s" values="300;320;290;300" repeatCount="indefinite" />
+    </circle>
+    <circle cx="340" cy="310" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="12s" values="310;290;320;310" repeatCount="indefinite" />
+    </circle>
+    <circle cx="360" cy="290" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="11s" values="290;310;280;290" repeatCount="indefinite" />
+    </circle>
+    <circle cx="380" cy="300" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="10s" values="300;280;310;300" repeatCount="indefinite" />
+    </circle>
+    <circle cx="400" cy="305" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="9s" values="305;325;295;305" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

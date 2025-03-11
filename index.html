@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Backgrounds</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow-y: auto !important;
+    }
+    
+    /* Wave Purple Section */
+    .section-wave-purple {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #0f0320 0%, #1a0035 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .section-wave-purple::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/wave-purple.svg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.7;
+      z-index: 0;
+    }
+    
+    /* Wave Blue Section */
+    .section-wave-blue {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #001428 0%, #002a51 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .section-wave-blue::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/wave-blue.svg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.7;
+      z-index: 0;
+    }
+    
+    /* Spectrum Section */
+    .section-spectrum {
+      min-height: 100vh;
+      background: #080808;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .section-spectrum::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/spectrum.svg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.9;
+      z-index: 0;
+    }
+    
+    /* Circle Section */
+    .section-circle {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #001a1a 0%, #003333 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .section-circle::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/circle-pulse.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.7;
+      z-index: 0;
+    }
+    
+    /* Particles Section */
+    .section-particles {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #0a0836 0%, #1d1155 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .section-particles::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('/particles.svg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.8;
+      z-index: 0;
+    }
+    
+    /* Content styling */
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    button {
+      background-color: #8a2be2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #7a1cc3;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 10;
+      backdrop-filter: blur(5px);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+    }
+    
+    nav li {
+      margin: 0 15px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 10px;
+      display: block;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      color: #8a2be2;
+    }
+    
+    /* Card layout */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .card {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+    }
+    
+    .card h3 {
+      margin-top: 0;
+    }
+    
+    /* Feature layout */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .feature {
+      display: flex;
+      align-items: flex-start;
+      text-align: left;
+    }
+    
+    .feature-icon {
+      background-color: #00cccc;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    
+    /* Form styling */
+    .contact-form {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 4px;
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Purple Wave Section -->
+  <section id="home" class="section-wave-purple">
+    <div class="content">
+      <h1>Welcome to Our Site</h1>
+      <p>Discover amazing features and services for your next project.</p>
+      <button>Get Started</button>
+    </div>
+  </section>
+
+  <!-- Blue Wave Section -->
+  <section id="about" class="section-wave-blue">
+    <div class="content">
+      <h2>About Us</h2>
+      <p>We are a team of passionate individuals dedicated to creating beautiful digital experiences that elevate your brand and engage your audience.</p>
+    </div>
+  </section>
+
+  <!-- Spectrum Section -->
+  <section id="services" class="section-spectrum">
+    <div class="content">
+      <h2>Our Services</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Service 1</h3>
+          <p>Description of your amazing service goes here. This is what makes your offering special.</p>
+        </div>
+        <div class="card">
+          <h3>Service 2</h3>
+          <p>Description of your amazing service goes here. This is what makes your offering special.</p>
+        </div>
+        <div class="card">
+          <h3>Service 3</h3>
+          <p>Description of your amazing service goes here. This is what makes your offering special.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Circle Section -->
+  <section id="features" class="section-circle">
+    <div class="content">
+      <h2>Key Features</h2>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <div>
+            <h3>Feature 1</h3>
+            <p>Description of an amazing feature that helps your users achieve their goals.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <div>
+            <h3>Feature 2</h3>
+            <p>Description of an amazing feature that helps your users achieve their goals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Particles Section -->
+  <section id="contact" class="section-particles">
+    <div class="content">
+      <h2>Contact Us</h2>
+      <div class="contact-form">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Your message"></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
