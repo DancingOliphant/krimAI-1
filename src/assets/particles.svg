@@ -1,0 +1,19 @@
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <g id="particles">
+    <circle cx="100" cy="300" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="15s" values="300;280;320;300" repeatCount="indefinite" />
+    </circle>
+    <circle cx="150" cy="310" r="2" fill="#ffffff" opacity="0.7">
+      <animate attributeName="cy" dur="12s" values="310;290;330;310" repeatCount="indefinite" />
+    </circle>
+    <!-- Repeat for many particles across the wave pattern -->
+    <!-- This is abbreviated - the actual SVG would have 50+ dots -->
+  </g>
+  
+  <!-- Use 'use' to repeat particle pattern -->
+  <use href="#particles" x="200" />
+  <use href="#particles" x="400" />
+  <use href="#particles" x="600" />
+  <use href="#particles" x="800" />
+  <use href="#particles" x="1000" />
+</svg>
