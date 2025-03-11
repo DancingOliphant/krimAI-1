@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import '../styles/backgrounds.css';
 
 type SectionProps = {
   children: ReactNode;
